@@ -1,6 +1,7 @@
 <?php
-print "こんにちは";
 
-if ($logged_in) {
-  print "こんばんは";
+if (100.00 - 100) {
+    print "true";
+} else {
+    print "false";
 }
