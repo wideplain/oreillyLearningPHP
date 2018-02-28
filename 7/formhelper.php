@@ -22,8 +22,8 @@ class FormHelper
     public function input($type, $attributes = array(), $isMultipule = false)
     {
         $attributes['type'] = $type;
-        if (($type == 'radio') || ($tupe == 'checkbox')) {
-            if ($this->OptionSelected($attributes['name'] ?? null,
+        if (($type == 'radio') || ($type == 'checkbox')) {
+            if ($this->isOptionSelected($attributes['name'] ?? null,
                 $attributes['value'] ?? null)) {
                 $attributes['checked'] = true;
             }
@@ -43,7 +43,7 @@ class FormHelper
     public function textarea($attributes = array()) {
         $name = $attributes['name']?? null;
         $value = $this->values[$name] ?? '';
-        return $this->start('textarea', $attributes).htmlentrites($value).$this->end('textarea');
+        return $this->start('textarea', $attributes).htmlentities($value).$this->end('textarea');
     }
 
     public function tag($tag, $attributes = array(), $isMultiple = false) {
